@@ -1,5 +1,7 @@
+import { Github } from "lucide-react";
 import * as motion from "motion/react-client";
 import Link from "next/link";
+
 
 export default function Header() {
   return (
