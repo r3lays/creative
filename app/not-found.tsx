@@ -43,7 +43,7 @@ export default function Home() {
         className="flex flex-col items-center gap-2"
       >
         <h1 className="text-2xl font-semibold text-primary">404 Not Found</h1>
-        <p className="text-muted-foreground text-base">&quot;What are you looking for here?&quot; - ChatGPT</p>
+        <p className="text-muted-foreground text-base">&quot;What are you looking for here?&quot; - A Computer</p>
         <Search />
       </motion.div>
     </div>

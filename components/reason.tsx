@@ -9,7 +9,7 @@ export default function Reason() {
       className="flex flex-col items-center"
     >
       <h1 className="text-lg font-semibold lg:text-2xl text-primary">A Creative space for my life, work, and thoughts.</h1>
-      <p className="text-muted-foreground text-base">&quot;Less is more&quot; - ChatGPT</p>
+      <p className="text-muted-foreground text-base">&quot;Less is more&quot; - A Computer</p>
     </motion.div>
   );
 }
