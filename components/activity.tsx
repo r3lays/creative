@@ -1,5 +1,4 @@
 import * as motion from "motion/react-client"
-import Link from "next/link";
 import * as React from "react";
 import GitHubCalendar from "react-github-calendar";
 
