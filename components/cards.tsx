@@ -1,34 +1,48 @@
-import * as motion from "motion/react-client"
+"use client";
+import * as motion from "motion/react-client";
 import FloatingCard from "./floating-card";
+import { type Cards, useCardContext } from "@/contexts/CardContext";
 
-
+const CARDS = [
+  {
+    image: "/next.svg",
+    title: "Work",
+    key: "work",
+  },
+  {
+    image: "/next.svg",
+    title: "Thoughts",
+    key: "thoughts",
+  },
+] as const;
 
 export default function Cards() {
+  const { setSelectedCard } = useCardContext();
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
-      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="flex gap-8 w-full relative"
+      variants={{
+        hidden: { opacity: 0 },
+        show: {
+          opacity: 1,
+          transition: {
+            staggerChildren: 0.2,
+            delayChildren: 0.3,
+          },
+        },
+      }}
+      initial="hidden"
+      animate="show"
+      className="flex gap-8 w-full"
     >
-      <FloatingCard
-        href="/"
-        image="/next.svg"
-        title="Work"
-      />
-
-
-      <FloatingCard
-        href="/"
-        image="/next.svg"
-        title="Thoughts"
-      />
-
-      <FloatingCard
-        href="/"
-        image="/next.svg"
-        title="About"
-      />
+      {CARDS.map((card) => (
+        <FloatingCard
+          key={card.key}
+          image={card.image}
+          title={card.title}
+          onClick={() => setSelectedCard(card.key as Cards)}
+        />
+      ))}
     </motion.div>
-  )
+  );
 }
