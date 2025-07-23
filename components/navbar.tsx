@@ -45,6 +45,7 @@ export default function Navbar() {
       >
         <div className="flex flex-row gap-4">
           <Button
+            disabled
             variant="link"
             size="icon"
             onClick={() => handleClick("/work")}
